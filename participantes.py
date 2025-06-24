@@ -5,7 +5,7 @@ ids_participantes = set()
 
 def adicionar_participante(id_participante, nome, email):
     if id_participante in ids_participantes:
-        print(f"ID '{id_participante}' já está em uso. Escolha outro.")
+        print(f"ID '{id_participante}' já está em uso.")
         return None
 
     novo_participante = {
@@ -15,6 +15,7 @@ def adicionar_participante(id_participante, nome, email):
         'eventos_inscritos': []
     }
     participantes.append(novo_participante)
+    print(f"Participante {nome} adicionado com sucesso.")
     ids_participantes.add(id_participante)
     
     
@@ -36,11 +37,15 @@ def listar_participantes():
 def editar_participante(id_participante, novo_nome=None, novo_email=None):
     participante = consultar_participante(id_participante)
     if not participante:
+        print(f"Participante com ID {id_participante} não encontrado.")
         return None
+    
     if novo_nome:
         participante['nome'] = novo_nome
     if novo_email:
         participante['email'] = novo_email
+        
+    print(f"Participante {id_participante} atualizado com sucesso.")
     return participante
 
 
