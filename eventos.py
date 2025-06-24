@@ -14,6 +14,7 @@ def adicionar_evento(codigo, nome, data):
         'data': data,
         'participantes': []
     }
+    
     eventos.append(novo_evento)
     print(f"Evento {nome} cadastrado com sucesso.")
     ids_eventos.add(codigo)
@@ -50,7 +51,6 @@ def editar_evento(codigo, novo_nome=None, nova_data=None):
 
 
 def remover_evento(codigo):
-    
     global eventos
     evento = next((e for e in eventos if e['codigo'] == codigo), None)
     if not evento:
