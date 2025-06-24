@@ -24,3 +24,11 @@ def consultar_evento(codigo_evento):
         if evento['codigo'] == codigo_evento:
             return evento
     return None
+
+
+def listar_eventos():
+    if not eventos:
+        print("Nenhum evento cadastrado.")
+    else:
+        for evento in eventos:
+            print(f"Código: {evento['codigo']}, Nome: {evento['nome']}, Data: {evento['data']}, Participantes: {len(evento['participantes'])}")
