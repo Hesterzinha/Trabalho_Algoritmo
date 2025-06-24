@@ -32,3 +32,17 @@ def listar_eventos():
     else:
         for evento in eventos:
             print(f"Código: {evento['codigo']}, Nome: {evento['nome']}, Data: {evento['data']}, Participantes: {len(evento['participantes'])}")
+            
+            
+def editar_evento(codigo, novo_nome=None, nova_data=None):
+    evento = consultar_evento(codigo)
+    if not evento:
+        print("Evento não encontrado.")
+        return None
+
+    if novo_nome:
+        evento['nome'] = novo_nome
+    if nova_data:
+        evento['data'] = nova_data
+    print(f"Evento {codigo} atualizado com sucesso.")
+    return evento
