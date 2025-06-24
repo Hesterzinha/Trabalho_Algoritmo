@@ -21,3 +21,10 @@ def consultar_participante(id_participante):
         if participante['id'] == id_participante:
             return participante
     return None
+
+def listar_participantes():
+    if not participantes:
+        print("Nenhum participante cadastrado.")
+    else:
+        for participante in participantes:
+            print(f"ID: {participante['id']}, Nome: {participante['nome']}, Email: {participante['email']}, Eventos: {len(participante['eventos_inscritos'])}")
