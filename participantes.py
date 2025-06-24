@@ -14,3 +14,10 @@ def adicionar_participante(id_participante, nome, email):
     }
     participantes.append(novo_participante)
     ids_participantes.add(id_participante)
+    
+    
+def consultar_participante(id_participante):
+    for participante in participantes:
+        if participante['id'] == id_participante:
+            return participante
+    return None
