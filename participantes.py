@@ -28,3 +28,13 @@ def listar_participantes():
     else:
         for participante in participantes:
             print(f"ID: {participante['id']}, Nome: {participante['nome']}, Email: {participante['email']}, Eventos: {len(participante['eventos_inscritos'])}")
+            
+def editar_participante(id_participante, novo_nome=None, novo_email=None):
+    participante = consultar_participante(id_participante)
+    if not participante:
+        return None
+    if novo_nome:
+        participante['nome'] = novo_nome
+    if novo_email:
+        participante['email'] = novo_email
+    return participante
