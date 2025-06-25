@@ -29,3 +29,11 @@ def participantes_mais_ativos(qtd=3):
     mais_ativos = sorted(participantes, key=lambda p: len(p['eventos_inscritos']), reverse=True)[:qtd]
     for p in mais_ativos:
         print(f"  {p['nome']} ({len(p['eventos_inscritos'])} eventos)")
+
+
+def eventos_com_poucos_participantes():
+    poucos = [e for e in eventos if len(e['participantes']) < 3]
+    if poucos:
+        print("\n=== EVENTOS COM <3 PARTICIPANTES ===")
+        for e in poucos:
+            print(f"  {e['nome']} (Código {e['codigo']})")
