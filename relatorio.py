@@ -23,3 +23,9 @@ def top_eventos(qtd=3):
     for e in mais_cheios:
         print(f"  {e['nome']} ({len(e['participantes'])} inscritos)")
 
+
+def participantes_mais_ativos(qtd=3):
+    print(f"\n=== TOP {qtd} PARTICIPANTES MAIS ATIVOS ===\n")
+    mais_ativos = sorted(participantes, key=lambda p: len(p['eventos_inscritos']), reverse=True)[:qtd]
+    for p in mais_ativos:
+        print(f"  {p['nome']} ({len(p['eventos_inscritos'])} eventos)")
