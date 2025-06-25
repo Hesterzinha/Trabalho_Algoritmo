@@ -37,3 +37,11 @@ def eventos_com_poucos_participantes():
         print("\n=== EVENTOS COM <3 PARTICIPANTES ===")
         for e in poucos:
             print(f"  {e['nome']} (Código {e['codigo']})")
+
+
+def participantes_sem_evento(qtd=3):
+    sem_evento = [p for p in participantes if not p['eventos_inscritos']]
+    if sem_evento:
+        print(f"\n=== PARTICIPANTES SEM INSCRIÇÃO (mostrando até {qtd}) ===")
+        for p in sem_evento[:qtd]:
+            print(f"  {p['nome']} (ID {p['id']})")
