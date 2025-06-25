@@ -14,7 +14,7 @@ def adicionar_evento(codigo, nome, data):
         'data': data,
         'participantes': []
     }
-    
+
     eventos.append(novo_evento)
     print(f"Evento {nome} cadastrado com sucesso.")
     ids_eventos.add(codigo)
@@ -33,9 +33,10 @@ def listar_eventos():
         print("Nenhum evento cadastrado.")
     else:
         for evento in eventos:
-            print(f"Código: {evento['codigo']}, Nome: {evento['nome']}, Data: {evento['data']}, Participantes: {len(evento['participantes'])}")
-            
-            
+            print(
+                f"Código: {evento['codigo']}, Nome: {evento['nome']}, Data: {evento['data']}, Participantes: {len(evento['participantes'])}")
+
+
 def editar_evento(codigo, novo_nome=None, nova_data=None):
     evento = consultar_evento(codigo)
     if not evento:
@@ -56,8 +57,9 @@ def remover_evento(codigo):
     if not evento:
         print("Evento não encontrado.")
         return None
-    
-    [p['eventos_inscritos'].remove(codigo) for p in participantes if codigo in p['eventos_inscritos']]
+
+    [p['eventos_inscritos'].remove(
+        codigo) for p in participantes if codigo in p['eventos_inscritos']]
     eventos = [e for e in eventos if e['codigo'] != codigo]
     ids_eventos.discard(codigo)
     print(f"Evento {codigo} removido com sucesso.")
