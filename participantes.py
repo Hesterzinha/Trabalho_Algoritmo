@@ -31,7 +31,8 @@ def listar_participantes():
         print("Nenhum participante cadastrado.")
     else:
         for participante in participantes:
-            print(f"ID: {participante['id']}, Nome: {participante['nome']}, Email: {participante['email']}, Eventos: {len(participante['eventos_inscritos'])}")
+            print('\n Lista de Participantes:\n')
+            print(f'ID: {participante['id']}, Nome: {participante['nome']}, Email: {participante['email']}, Eventos: {len(participante['eventos_inscritos'])}')
             
             
 def editar_participante(id_participante, novo_nome=None, novo_email=None):
