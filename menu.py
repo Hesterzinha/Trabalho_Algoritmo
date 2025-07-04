@@ -113,8 +113,10 @@ def menu_eventos():
             codigo = input("Código do evento: ")
             novo_nome = input("Novo nome (ou Enter para manter): ")
             nova_data = input("Nova data (ou Enter para manter): ")
+            novo_tema = input("Novo tema (ou Enter para manter): ")
+
             editar_evento(codigo, nome=novo_nome or None,
-                          data=nova_data or None)
+                          data=nova_data or None, tema=novo_tema or None)
         elif op == 4:
             codigo = input("Código do evento a remover: ")
             remover_evento(codigo)
